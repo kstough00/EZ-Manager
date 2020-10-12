@@ -9,7 +9,14 @@ class ArtistsController < ApplicationController
     end
 
     def create
-        @artist = Artist.create(artist_params)
+        @artist = Artist.new(artist_params)
+            if @artist.valid?
+                @artist.save
+                redirect_to artist_path(@artist)
+            else
+                flash[:mesage] = "Invalid entry, please try again"
+                render :new
+            end
     end
 
     def new

@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_12_182924) do
+ActiveRecord::Schema.define(version: 2020_10_12_184250) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
     t.integer "performances"
-    t.boolean "booked"
+    t.boolean "booked", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "performances", force: :cascade do |t|
-    t.string "stage"
     t.string "artist"
+    t.string "stage"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_10_12_182924) do
   create_table "stages", force: :cascade do |t|
     t.string "name"
     t.integer "performances"
-    t.boolean "booked"
+    t.boolean "booked", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -3,7 +3,7 @@ class CreateStages < ActiveRecord::Migration[6.0]
     create_table :stages do |t|
       t.string :name
       t.integer :performances
-      t.boolean :booked
+      t.boolean :booked, default: false
 
       t.timestamps
     end

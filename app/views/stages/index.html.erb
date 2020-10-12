@@ -1,0 +1,16 @@
+<h1>All the Stages</h1>
+
+<ul>
+    <% @stages.each do |stage| %>
+        <li>
+            <%= stage.name %>
+        </li>
+        <br>
+        <li>
+            <%= stage.performances%>
+        </li>
+        <br>
+        <li>
+            <%= stage.booked%>
+    <%end%>
+</ul>

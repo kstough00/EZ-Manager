@@ -4,4 +4,5 @@ class Artist < ApplicationRecord
 
     validates :name, presence: true
     validates :performances, presence: true
+    validates :name, uniqueness: true
 end

@@ -1,5 +1,24 @@
-<h1><%= @artist.name %></h1>
-<br>
-<h4><%= @artist.performances %></h4>
-<br>
-<h4><%= @artist.booked %></h4>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @artist.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @artist.email %>
+</p>
+
+<p>
+  <strong>Performances:</strong>
+  <%= @artist.performances %>
+</p>
+
+<p>
+  <strong>Booked:</strong>
+  <%= @artist.booked %>
+</p>
+
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %>

@@ -1,8 +1,10 @@
 class CreatePerformances < ActiveRecord::Migration[6.0]
   def change
     create_table :performances do |t|
-      t.string :artist
-      t.string :stage
+      t.integer :artist_id
+      t.integer :stage_id
+      t.integer :duration
+      t.text :description
 
       t.timestamps
     end

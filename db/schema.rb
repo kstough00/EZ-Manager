@@ -14,23 +14,23 @@ ActiveRecord::Schema.define(version: 2020_10_12_184250) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.integer "performances"
-    t.boolean "booked", default: false
+    t.string "genre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "performances", force: :cascade do |t|
-    t.string "artist"
-    t.string "stage"
+    t.integer "artist_id"
+    t.integer "stage_id"
+    t.integer "duration"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "stages", force: :cascade do |t|
     t.string "name"
-    t.integer "performances"
-    t.boolean "booked", default: false
+    t.integer "capacity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

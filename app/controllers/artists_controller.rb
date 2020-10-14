@@ -10,7 +10,7 @@ class ArtistsController < ApplicationController
     end
 
     def new
-        @artist = Artist.new
+        @artist = Artist.new #setting a variable to be accessible to the form_for view
     end
 
     def edit
@@ -18,22 +18,31 @@ class ArtistsController < ApplicationController
 
     def create
         @artist = Artist.new(artist_params)
-        redirect_to @artist, notice: 'Artist was successfully created.'
+        if @artist.save
+            redirect_to artists_path
+    end
+
+    def update
+        if @artist.update(artist_params)
+            render :show
+        else
+        render :edit
+    end
     end
 
     def destroy
         @artist.destroy
-        redirect_to artists_url, notice: 'Artist was successfully destroyed.' }  
+        # redirect_to artists_url, notice: 'Artist was successfully destroyed.' }  
     end
 
     private
 
     def set_artist
         @artist = Artist.find(params[:id])
-      end
+    end
 
     def artist_params
-        params.require(:artist).permit(:name, :performances, :booked)
+        params.require(:artist).permit(:name, :genre)
     end
 
 end

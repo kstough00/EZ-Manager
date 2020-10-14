@@ -1,3 +1,5 @@
+<h2> Create a new Artist! </h2>
+
 <% if flash[:message] %>
 <%= flash[:message] %>
 <% end %>
@@ -5,8 +7,8 @@
 <%= form_for(@artist) do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
-    <%= f.label :performances %>
-    <%= f.text_field :performances %>
-    <%= collection_select :performances, :stage_id, Stage.all, :id, :name %>
+    <%= f.label :genre %>
+    <%= f.text_field :genre %>
+    <%= collection_select :genre, :artist_id, Artist.all, :id, :name %>
     <%= f.submit %>
     <% end %>

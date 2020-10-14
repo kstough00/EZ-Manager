@@ -1,8 +1,6 @@
 <h2> Create a new Artist! </h2>
 
-<% if flash[:message] %>
-<%= flash[:message] %>
-<% end %>
+<%= render partial: '/errors', locals: { record: @artist } %>
 
 <%= form_for(@artist) do |f| %>
     <%= f.label :name %>

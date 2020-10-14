@@ -1,15 +1,17 @@
 <h1>All the Artists</h1>
 
+<%= link_to "Create New Artist", new_artist_path %>
+
 <ul>
     <% @artists.each do |artist| %>
         <li>
-            <%= link_to artist.name, artist_path(artist) %>
+            Name: <%= link_to artist.name, artist_performances_path(artist) %>
         </li>
         <li>
-            <%= artist.performances%>
+            Genre: <%= artist.genre %>
         </li>
         <li>
-            <%= artist.booked%>
-        <br>
+            Duration: <%=duration_to_minutes(artist.duration) %>
+        <br><br>
     <%end%>
 </ul>

@@ -1,0 +1,15 @@
+<h2> Add a new Performance for <i><%= @artist.name %></i></h2>
+
+
+<%= form_for @performance do |f| %>
+    <%= f.label :Stage %>
+    <%= f.collection_select :stage_id, Stage.all, :id, :name, prompt: true %>
+    <%= f.label :Duration %>
+    <%= f.number_field :duration %>
+    <%= f.label :Description %>
+    <%= f.text_area :description %>
+    <%= f.hidden_field :artist_id, value: @artist.id %>
+    <%= f.submit %>
+<% end %>
+
+

@@ -1,0 +1,12 @@
+All the performances of <%= @artist.name %>
+
+<h2> Artist <%= @artist.name %></h2>
+
+<%= link_to "Add New Performance", new_artist_performance_path(@artist) %>
+
+<% @artist.performances.each.with_index(1) do |performance, index|%>
+       <h3><%= index %>. <%= performance.stage.name %></h3>
+       <p><%= performance.duration%></p>
+       <p><%= performance.description%></p>
+
+<% end %>

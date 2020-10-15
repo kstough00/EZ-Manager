@@ -1,4 +1,7 @@
-<h1>All the Stages</h1>
+<h2>All the Stages</h2>
+<%= link_to "Large Stages", stages_large_path%>
+<%= link_to "Small Stages", stages_small_path%>
+<%= link_to "Create New Stage", new_stage_path%>
 
 <ul>
     <% @stages.each do |stage| %>
@@ -11,6 +14,6 @@
         </li>
         <br>
         <li>
-            <%= stage.booked%>
+            <%= stage.capacity%>
     <%end%>
 </ul>

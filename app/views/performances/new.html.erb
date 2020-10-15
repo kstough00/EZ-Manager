@@ -1,13 +1,15 @@
 <h2> Add a new Performance for <i><%= @artist.name %></i></h2>
 
+<%= render partial: '/errors', locals: { record: @performance } %>
+
 
 <%= form_for @performance do |f| %>
     <%= f.label :Stage %>
-    <%= f.collection_select :stage_id, Stage.all, :id, :name, prompt: true %>
+    <div><%= f.collection_select :stage_id, Stage.all, :id, :name, prompt: true %></div>
     <%= f.label :Duration %>
-    <%= f.number_field :duration %>
+    <div><%= f.number_field :duration %></div>
     <%= f.label :Description %>
-    <%= f.text_area :description %>
+    <div><%= f.text_area :description %></div>
     <%= f.hidden_field :artist_id, value: @artist.id %>
     <%= f.submit %>
 <% end %>

@@ -16,5 +16,20 @@ class StagesController < ApplicationController
         @stage = Stage.new
     end
 
-    
+    def large
+        @stages = Stage.large
+        render :index
+    end
+
+    def small
+        @stages = Stage.small
+        render :index
+    end
+
+    private
+
+    def stage_params
+        params.require(:name).permit(:capacity, :artist_id)
+    end
+
 end

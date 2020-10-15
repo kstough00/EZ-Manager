@@ -5,8 +5,8 @@
 <%= form_for(@stage) do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
-    <%= f.label :performances %>
-    <%= f.text_field :performances %>
-    <%= collection_select :performances, :stage_id, Artist.all, :id, :name %>
+    <%= f.label :capacity %>
+    <%= f.text_field :capacity %>
+    <%= collection_select :stages, :stage_id, Stage.all, :id, :name %>
     <%= f.submit %>
     <% end %>

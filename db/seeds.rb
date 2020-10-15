@@ -6,4 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-artists = Artist.create([{ name: 'Kyle' }, { name: "Duke' }])
+artists = Artist.create([{ name: 'Kyle' }, { name: 'Duke' }])
+
+
+stages = Stage.create([{ name: 'Main Stage', capacity: 1000 }, { name: 'riverview', capacity: 500}])
+

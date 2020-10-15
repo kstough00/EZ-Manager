@@ -6,7 +6,11 @@ class PerformancesController < ApplicationController
 
     def new
         get_artist
+        if !@artist
+        redirect_to new_artist_path
+        else
         @performance = Performance.new
+        end
     end
 
     def create
@@ -16,8 +20,8 @@ class PerformancesController < ApplicationController
             redirect_to artist_performances_path(@performances.artist)
         else
             render :new
+        end
     end
-end
 
 
 

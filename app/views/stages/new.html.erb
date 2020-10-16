@@ -1,12 +1,12 @@
-<% if flash[:message] %>
-<%= flash[:message] %>
-<% end %>
+<h1> New Stage </h1>
+
+<%= render partial: '/errors', locals: { record: @stage } %>
 
 <%= form_for(@stage) do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
+    <%= collection_select :stages, :stage_id, Stage.all, :id, :name %>
     <%= f.label :capacity %>
     <%= f.text_field :capacity %>
-    <%= collection_select :stages, :stage_id, Stage.all, :id, :name %>
     <%= f.submit %>
     <% end %>

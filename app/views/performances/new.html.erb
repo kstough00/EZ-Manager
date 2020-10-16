@@ -5,6 +5,7 @@
 
 <%= form_for @performance do |f| %>
     <%= f.label :Stage %>
+    <%= f.text_field :stage %>
     <div><%= f.collection_select :stage_id, Stage.all, :id, :name, prompt: true %></div>
     <%= f.label :Duration %>
     <div><%= f.number_field :duration %></div>

@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   get '/stages/small', to: 'stages#stages_small'
   resources :stages
   resources :artists do
-    resources :performances, only: [:index, :new]
+    resources :performances, only: [:index, :new, :create]
   end
-  resources :performances, only: :create
+  resources :performances, only: [:index, :new, :create]
 
   root to: 'application#home'
 end

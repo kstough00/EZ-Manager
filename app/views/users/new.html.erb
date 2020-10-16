@@ -1,6 +1,6 @@
 <h2>  Create a user account </h2>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, url: signup_path do |f| %>
   <%= f.label :Username %>
   <div><%= f.text_field :username %></div>
   <%= f.label :Password %>
@@ -11,8 +11,3 @@
 <% end %>
 
 
-<%= form_for(:user, url: sign_up_path)  do |f| %>
-  email: <%= f.text_field :email, :placeholder => (@user.errors.full_messages_for(:email).first || "Enter email here") %>
-  password: <%= f.password_field :password, :placeholder => (@user.errors.full_messages_for(:password).first || "Enter password here") %>
-  <%= f.submit "Sign Up" %>
-<% end %>

@@ -1,4 +1,5 @@
 class Artist < ApplicationRecord
+    belongs_to :user
     has_many :performances
     has_many :stages, through: :performances
 

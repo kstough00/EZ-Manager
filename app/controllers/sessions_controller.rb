@@ -1,8 +1,6 @@
 class SessionsController < ApplicationController
 
-
     def new
-        # @user = User.new
     end
 
     def create
@@ -14,12 +12,14 @@ class SessionsController < ApplicationController
           @error = "Password incorrect. Please try again."
           render :new
         else
-            session[:user_id] = @user.id
+            log_in(@user)
             redirect_to artists_path
         end
     end
 
     def destroy
+        session.clear
+        redirect_to artists_path
     end
 
 

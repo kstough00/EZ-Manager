@@ -36,7 +36,6 @@ class ArtistsController < ApplicationController
 
     def destroy
         @artist.destroy
-        # redirect_to artists_url, notice: 'Artist was successfully destroyed.' }  
     end
 
     private

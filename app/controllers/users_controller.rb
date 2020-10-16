@@ -1,26 +1,23 @@
 class UsersController < ApplicationController
-    # get "/signup" do
-    #     erb :"/users/new"
-    # end
-
-    # post "/signup" do
-    #     user = User.new(params)
-    #     if user.save
-    #       session[:user_id] = user.id
-    #       redirect "/plants"
-    #     else
-    #       @errors = user.errors.full_messages
-    #       erb :"/users/new"
-    #     end
-    # end
-
 
     def new
       @user = User.new
     end
 
     def create
-
+      @user = User.new(user_params)
+      if @user.save
+        session[:user_id] = @user.id
+        redirect_to new_artist_path
+      else
+        render :new
+      end
     end
-        
+
+    private
+
+    def user_params
+      params.require(:user).permit(:username, :password, :password_confirmation)
+    end
+
 end

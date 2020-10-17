@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :performances, only: [:index, :new, :create]
 
   root to: 'application#home'
+  get '/auth/:provider/callback', to: 'sessions#create'
 end

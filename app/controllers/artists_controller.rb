@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-    before_action :require_login
+    before_action :require_login, only: [:new, :create, :update]
 
     def index
         @artists = current_user.artists
@@ -22,7 +22,7 @@ class ArtistsController < ApplicationController
         if @artist.update(artist_params)
             render :show
         else
-        render :edit
+            render :edit
         end
     end
 

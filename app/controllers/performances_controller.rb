@@ -32,7 +32,7 @@ class PerformancesController < ApplicationController
     end
 
     def user_authorized?
-         @artist.user && (@artist.user_.id == current_user.id)
+         @artist.user && (@artist.user_id == current_user.id)
     end
 
     def redirect_invalid_request

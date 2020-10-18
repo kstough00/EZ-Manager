@@ -1,4 +1,5 @@
-<h2> Log In </h2>
+<h3><%= link_to "Sign up", '/signup'%> Or: </h3> 
+<h2>Log In: </h2>
 <p><i><%= @error %></i></p>
 
 <%= form_tag %>
@@ -8,4 +9,4 @@
 <%= password_field_tag :password %>
 <%= submit_tag "Log In" %>
 
-<h3> Or: <%= link_to "Log In with Github", '/auth/github' %></h3>
+<h4><%= link_to "Log In with Github", '/auth/github' %></h4>

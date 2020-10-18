@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :performances, only: [:index, :new, :create]
 
-  root to: 'application#home'
+  root to: 'sessions#new'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -18,3 +18,13 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
 
 end
+
+# Rails.application.routes.draw do
+#  resources :stages
+#  resources :artists, only: [:index, :create, :new] do
+#   resources :performances, only: [:index, :new]
+#  end
+#  resources :performances, only: :create
+# end
+# 
+

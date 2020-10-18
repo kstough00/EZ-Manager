@@ -5,7 +5,7 @@
 <%= form_for(@stage) do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
-    <%= collection_select :stages, :stage_id, Stage.all, :id, :name %>
+    <%# <%= collection_select :stages, :stage_id, Stage.all, :id, :name %>
     <%= f.label :capacity %>
     <%= f.text_field :capacity %>
     <%= f.submit %>

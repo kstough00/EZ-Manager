@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
 
     def destroy
         session.clear
-        redirect_to artists_path
+        redirect_to login_path
     end
 
 

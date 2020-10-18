@@ -11,3 +11,23 @@ App Flow:
 4. If a user signs up, take them to their user_homepage once signed up.
 5. Otherwise a user should be able to login and be directed to their user_homepage which shows their festival
 6. 
+
+Feature Requests:
+scope method: filtering stages by capacity: 'Large', 'Small'
+model method: return the duration of a performance
+view helper method: convert duration from seconds to minutes & seconds
+helper method: converts 
+
+
+Stages:
+-controller
+    -index,
+-model 
+    -
+-routes
+    -get '/stages', to: 'stages#index'
+-views
+    -index
+
+
+

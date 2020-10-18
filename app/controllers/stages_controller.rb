@@ -1,13 +1,13 @@
 class StagesController < ApplicationController
-    before_action :set_stage, only: [:show, :edit, :update, :destroy]
+    # before_action :set_stage, only: [:show, :edit, :update, :destroy]
 
     def index
         @stages = Stage.all
     end
 
-    def show
-        @stage = Stage.find(params[:id])
-    end
+    # def show
+    #     @stage = Stage.find(params[:id])
+    # end
 
     def new
         @stage = Stage.new
@@ -16,7 +16,7 @@ class StagesController < ApplicationController
     def create
         @stage = Stage.new(stage_params)
         if @stage.save
-            redirect_to new_stage_path(@stage)
+            redirect_to stages_path(@stage)
         else
             render :new
         end
@@ -34,9 +34,9 @@ class StagesController < ApplicationController
 
     private
 
-    def set_stage
-        @stage = Stage.find(params[:id])
-    end
+    # def set_stage
+    #     @stage = Stage.find(params[:id])
+    # end
 
     def stage_params
         params.require(:stage).permit(:name, :capacity)

@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-    before_action :require_login, only: [:new, :create, :update]
+    before_action :require_login
 
     def index
         @artists = current_user.artists

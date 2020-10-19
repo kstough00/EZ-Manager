@@ -22,14 +22,14 @@ class SessionsController < ApplicationController
             render :new
             else
                 log_in(@user)
-                redirect_to artists_path
+                redirect_to stages_path
             end
         end
     end
 
     def destroy
         session.clear
-        redirect_to stages_path
+        redirect_to root_path
     end
 
 

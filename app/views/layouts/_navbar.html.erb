@@ -6,8 +6,8 @@
         </div>
     <% end %>
     <div class="nav">
-        <div><a href="/stages">Stages</a></div>
         <% if logged_in? %>
+            <div><a href="/stages">My Stages</a></div>
             <div><a href="/artists">My Artists</a></div>
             <div><a href="/logout">Log Out</a></div>
         <% else %>

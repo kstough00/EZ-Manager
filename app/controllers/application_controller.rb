@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    layout "welcome", only: [:home]
+    # layout "welcome", only: [:home]
 
     def current_user
         User.find_by(id: session[:user_id])

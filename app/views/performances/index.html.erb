@@ -4,6 +4,6 @@
 
 <% @artist.performances.each.with_index(1) do |performance, index|%>
        <h3><%= index %>. <%= performance.stage.name %></h3>
-       <p><%= performance.duration%></p>
-       <p><%= performance.description%></p>
+       <p>Duration: <%= performance.duration%></p>
+       <p>Set Description: <%= performance.description%></p>
 <% end %>

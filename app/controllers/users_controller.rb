@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
         log_in(@user)
-        redirect_to new_artist_path
+        redirect_to stages_path
       else
         render :new
       end

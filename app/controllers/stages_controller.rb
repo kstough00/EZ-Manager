@@ -1,13 +1,10 @@
 class StagesController < ApplicationController
-    # before_action :set_stage, only: [:show, :edit, :update, :destroy]
+    before_action :require_login
+    before_action :set_stage, only: [:edit, :update, :destroy]
 
     def index
         @stages = Stage.all
     end
-
-    # def show
-    #     @stage = Stage.find(params[:id])
-    # end
 
     def new
         @stage = Stage.new
@@ -22,6 +19,10 @@ class StagesController < ApplicationController
         end
     end
 
+    def show
+        stage_params
+    end
+
     def stages_large
         @stages = Stage.large
         render :index
@@ -34,9 +35,9 @@ class StagesController < ApplicationController
 
     private
 
-    # def set_stage
-    #     @stage = Stage.find(params[:id])
-    # end
+    def set_stage
+        @stage = Stage.find(params[:id])
+    end
 
     def stage_params
         params.require(:stage).permit(:name, :capacity)

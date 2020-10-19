@@ -1,17 +1,20 @@
+<h1>Get Started with creating a new stage!</h1>
+<%= link_to "Create New Stage", new_stage_path%>
+<br>
+<%= link_to "Create New Artist", new_artist_path%>
+<br>
 <h2> Stages: </h2>
 <%= link_to "Large Stages", stages_large_path%>
 <br>
 <%= link_to "Small Stages", stages_small_path%>
 <br>
-<%= link_to "Create New Stage", new_stage_path%>
-
 <ul>
     <% @stages.each do |stage| %>
         <li>
-        <p> Stage: <%= stage.name %></p>
+        Stage: <%= stage.name %>
         </li>
         <li>
-        <p> Capacity: <%= stage.capacity%> </p>
+        Capacity: <%= stage.capacity%>
         </li>
         <br>
     <%end%>

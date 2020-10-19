@@ -21,9 +21,9 @@ helper method: converts
 
 Stages:
 -controller
-    -index,
--model 
-    -
+    -index
+    -new
+
 -routes
     -get '/stages', to: 'stages#index'
 -views
@@ -37,6 +37,7 @@ Artists:
  -controller
     -index
     -new
+    -create
  -routes
     - get '/artists', to: 'artists#index'
     - get '/artists/new', to: 'artists#new'
@@ -45,11 +46,15 @@ Artists:
 
 Performances:
  -controller
-    -
+    - new
+    - index
+    - create
  -routes
     - get '/artists/:artists_id/performances', to: 'performances#index'
     - get '/artists/:artists_id/performances/new', to: 'performances#new'
     - post '/performances', to: 'performances#create'
-
+ -views
+    -new => nested under artists
+    -index => nested under artists
 
 

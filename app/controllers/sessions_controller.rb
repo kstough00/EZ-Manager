@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
             log_in(@user)
             redirect_to artists_path
         else
-
             @user = User.find_by(username: params[:username])
             if !@user
                 @error = "Account not found. Please try again."
@@ -30,7 +29,7 @@ class SessionsController < ApplicationController
 
     def destroy
         session.clear
-        redirect_to login_path
+        redirect_to stages_path
     end
 
 

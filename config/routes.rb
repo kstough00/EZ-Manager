@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :performances, only: [:index, :new, :create]
 
-  root to: 'sessions#new'
+  root to: 'sessions#welcome'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

@@ -1,6 +1,6 @@
 class PerformancesController < ApplicationController
     before_action :require_login
-    before_action :get_artist, only: [:index, :new]
+    before_action :get_artist, only: [:index, :new, :create]
 
     def index
         redirect_invalid_request
@@ -14,6 +14,7 @@ class PerformancesController < ApplicationController
     def create
         @artist = Artist.find_by(id: params[:performance][:artist_id])
         if user_authorized?
+            # binding.pry
             @performance = Performance.new(performance_params)
             if @performance.save
                 redirect_to artist_performances_path(@performance.artist)

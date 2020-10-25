@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+EZManager README:
 
-Things you may want to cover:
+* Ruby version =* 2.6.1
 
-* Ruby version
+* System dependencies => make sure to have Rails installed on your machine and it is connected to the internet
 
-* System dependencies
+* Configuration => Open a new terminal and run: 'bundle install'
 
-* Configuration
+* How to run the test suite 1. Run 'Rails s' to start your local server
+                            2. Open a new browser and navigate to 'localhost:3000'
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Services - Signup or Login with Github

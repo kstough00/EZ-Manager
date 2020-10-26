@@ -1,5 +1,5 @@
 class StagesController < ApplicationController
-    before_action :require_login
+    before_action :require_login, only: [:new, :create]
     before_action :set_stage, only: [:edit, :update, :destroy]
 
     def index

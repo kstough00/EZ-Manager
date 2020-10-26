@@ -10,7 +10,12 @@ App Flow:
 3. A user should only be able to enter valid information to sign up/login.
 4. If a user signs up, take them to their user_homepage once signed up.
 5. Otherwise a user should be able to login and be directed to their user_homepage which shows their festival
-6. 
+6. A user should be able to see the stages other users have created.
+7. a user should be able to create their own stages and artists
+8. a user should be able to create performances between their stages and artists.
+9. a user should be able to view their stages, artists and performances.
+10. a user should be able to logout.
+11. a user should only be able to enter valid data for the entire application
 
 Requirements:
  DONE- Using Ruby on Rails for the project

@@ -1,10 +1,6 @@
-<h2> Edit your stage: </h2>
+<h1>Edit Stage</h1>
 
-<form method="post" action="/stages/<%= @stage.id %>" >
-<input type="hidden" name="_method" value="patch">
-    <label>Name:</label>
-    <input type="text" name="plant[name]" placeholder="name" value="<%= @stage.name %>">
-    <label>Capacity:</label>
-    <input type="text" capacity="stage[capacity]" placeholder="capacity" value="<%= @stage.name %>">
-    <input type="submit" value="Edit Stage">
-</form>
+<%= render 'form', stage: @stage %>
+
+<%= link_to 'Show', @stage %> |
+<%= link_to 'Back', stages_path %>

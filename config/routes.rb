@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/auth/:provider/callback', to: 'sessions#create'
   get '/stages/large', to: 'stages#stages_large'
   get '/stages/small', to: 'stages#stages_small'
   resources :stages
@@ -15,16 +16,4 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
 
-  get '/auth/:provider/callback', to: 'sessions#create'
-
 end
-
-# Rails.application.routes.draw do
-#  resources :stages
-#  resources :artists, only: [:index, :create, :new] do
-#   resources :performances, only: [:index, :new]
-#  end
-#  resources :performances, only: :create
-# end
-# 
-

@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
     end
 
     def create
+        # raise_params
         if request.env["omniauth.auth"]
             @user = User.find_by(github_uid: request.env["omniauth.auth"]["uid"])
             if @user.nil?

@@ -12,22 +12,43 @@ App Flow:
 5. Otherwise a user should be able to login and be directed to their user_homepage which shows their festival
 6. 
 
-Feature Requests:
-scope method: filtering stages by capacity: 'Large', 'Small'
-model method: return the duration of a performance
-view helper method: convert duration from seconds to minutes & seconds
-helper method: converts 
+Requirements:
+ DONE- Using Ruby on Rails for the project
+ DONE- Include at least one has_many relationship (x has_many y; e.g. User has_many Recipes)
+ DONE- Include at least one belongs_to relationship (x belongs_to y; e.g. Post belongs_to User)
+ DONE- Include at least two has_many through relationships (x has_many y through z; e.g. Recipe has_many Items through Ingredients)
+ DONE- Include at least one many-to-many relationship (x has_many y through z, y has_many x through z; e.g. Recipe has_many Items through Ingredients, Item has_many Recipes through Ingredients)
+ DONE- The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
+ DONE- Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
+ DONE- Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+ DONE- Include signup
+ DONE- Include login
+ DONE- Include logout
+ DONE-broken- Include third party signup/login (how e.g. Devise/OmniAuth)
+ DONE- Include nested resource show or index (URL e.g. users/2/recipes)
+ DONE- Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
+ DONE- Include form display of validation errors (form URL e.g. /recipes/new)
+
+Confirm:
+ DONE- The application is pretty DRY
+ DONE- Limited logic in controllers
+ DONE- Views use helper methods if appropriate
+ DONE- Views use partials if appropriate
 
 
 Stages:
 -controller
     -index
     -new
+    -create
+    -show
 
 -routes
     -get '/stages', to: 'stages#index'
 -views
     -index
+    -new
+    -show
 -db
     -name
     -capacity
@@ -43,6 +64,10 @@ Artists:
     - get '/artists/new', to: 'artists#new'
     - post '/artists', to: 'artists#create'
     - get '/artist/:id', to: 'artists#show'
+ -views
+    - new
+    - index
+    - show
 
 Performances:
  -controller
